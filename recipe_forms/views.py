@@ -25,6 +25,21 @@ def author_stuff(request, author_id):
 def add_recipe(request):
     html = 'add_recipe.html'
     form = None
+    if request.method == "POST":
+        form = RecipesForm(request.POST)
+        if form.is_valid():
+            data = form.cleaned_data
+            Recipes.objects.create(
+                title=data["title"],
+                author=data["author"],
+                description=data["description"],
+                time_req=data["time_req"],
+                instructions=data["instructions"],
+            )
+        return render(request, "added_recipe.html")
+    else:
+        form = RecipesForm()
+    return render(request, html, {"form": form})
 
 def add_author(request):
     html = 'add_author.html'

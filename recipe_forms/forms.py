@@ -3,9 +3,15 @@
 from django import forms
 from recipe_forms.models import Author
 
-class AuthorsForm(form.Form):
+class AuthorsForm(forms.Form):
+    name = forms.CharField(max_length=50)
+    bio = forms.CharField(widget=forms.Textarea)
+    exclude = ["user"]
 
 
-
-class RecipesForm(form.Form):
-    
+class RecipesForm(forms.Form):
+    title = forms.CharField(max_length=50)
+    author = forms.ModelChoiceField(queryset=Author.objects.all())
+    description = forms.CharField(max_length=140)
+    time_req = forms.CharField(max_length=25)
+    instructions = forms.CharField(widget=forms.Textarea)
