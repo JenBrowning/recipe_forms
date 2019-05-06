@@ -19,7 +19,7 @@ class Recipes(models.Model):
     title = models.CharField(max_length=50)
     author = models.ForeignKey(Author, on_delete=models.CASCADE)
     description = models.CharField(max_length=1000)
-    time_required = models.CharField(max_length=50)
+    time_req = models.CharField(max_length=50)
     instructions = models.TextField()
 
     def __str__(self):

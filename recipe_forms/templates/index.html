@@ -6,8 +6,8 @@
 
 <h1>Click below for Recipe</h1>
 <body>
-    {% for rec in recipes %}
-    <li><a href="recipes/{{ rec.id }}">{{ rec.title }}</a></li>
+    {% for item in recipes %}
+    <li><a href="recipes/{{ item.id }}">{{ item.title }}</a></li>
     {% endfor %}
 
 </body>

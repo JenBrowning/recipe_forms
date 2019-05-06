@@ -12,6 +12,6 @@ class AuthorsForm(forms.Form):
 class RecipesForm(forms.Form):
     title = forms.CharField(max_length=50)
     author = forms.ModelChoiceField(queryset=Author.objects.all())
-    description = forms.CharField(max_length=140)
+    description = forms.CharField(max_length=1000)
     time_req = forms.CharField(max_length=25)
     instructions = forms.CharField(widget=forms.Textarea)
