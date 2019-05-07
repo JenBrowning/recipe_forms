@@ -28,7 +28,7 @@ urlpatterns = [
     path("", views.index),
     path('author/<int:author_id>/', views.author_stuff),
     path('recipes/<int:recipe_id>/', views.recipe_stuff),
-    path('addrecipe', views.add_recipe),
-    path('addauthor', views.add_author)
+    path('addrecipe/', views.add_recipe),
+    path('addauthor/', views.add_author)
 
 ]

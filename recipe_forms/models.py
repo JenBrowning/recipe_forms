@@ -14,7 +14,6 @@ class Author(models.Model):
         return self.name
 
     
-
 class Recipes(models.Model):
     title = models.CharField(max_length=50)
     author = models.ForeignKey(Author, on_delete=models.CASCADE)
